@@ -15,17 +15,32 @@
     <div class="instructions">
         <span>Quiz Instructions</span>
     </div>
-    
     <div class="quiz_instructions">
         <div>You will have 1 minute to answer 5 questions. You will not be able to change your answer once you've
             selected it. If you answer a question incorrectly, it will deduct 15 seconds off the of the timer. The quiz
             is done once you've completed all the questions or run out of time. Good luck!</div>
     </div>
-
     <!-- THIS ONLY DISPLAYS ON START -->
     <div id="start">
         <button onclick="startQuiz()" type="button" class="btn btn-secondary bg-dark shadow">Start Quiz</button>
     </div>
+
+
+    <!-- THIS DISPLAYS AFTER START HAPPENS -->
+    <div id="during" class="hide">
+        <!-- countdown timer element -->
+        <p id="timer">DURING</p>
+        <div>
+            <p id="currentQuestion"></p>
+            <div id="answers"></div>
+        </div>
+    </div>
+
+    <!-- THIS DISPLAY AT END -->
+    <div id="ended" class="hide">
+        <p>Quiz Ended</p>
+    </div>
+
 
     <!-- WE NEED OUR SCRIPT IMPORTED -->
     <script src="./assets/js/script.js"></script>
