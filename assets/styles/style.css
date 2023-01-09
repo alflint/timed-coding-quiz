@@ -6,3 +6,7 @@ body {
     display:none;
 }
 
+.width-full {
+    width: -webkit-fill-available;
+}
+

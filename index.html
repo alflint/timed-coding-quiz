@@ -12,59 +12,99 @@
 </head>
 
 <body class="bg-secondary d-flex justify-content-center align-items-center flex-column">
-    
+
     <!-- DISPLAY AT START -->
     <div id="start">
-        <div class="instructions">
-            <span>Quiz Instructions</span>
+        <div class="card text-center" style="width: 540px;">
+            <div class="card-header d-flex justify-content-between align-items-center bg-white">
+                <span>Quiz Instructions</span>
+            </div>
+            <div class="card-body">
+                <div>You will have 1 minute to answer 5 questions. You will not be able to change your answer once
+                    you've
+                    selected it. If you answer a question incorrectly, it will deduct 15 seconds off the of the timer.
+                    The
+                    quiz
+                    is done once you've completed all the questions or run out of time. Good luck!
+                </div>
+                
+            </div>
+            <div class="card-footer text-muted bg-white">
+                <button onclick="startQuiz()" type="button" class="btn btn-secondary bg-dark shadow">Start Quiz</button>
+            </div>
         </div>
-        <div class="quiz_instructions">
-            <div>You will have 1 minute to answer 5 questions. You will not be able to change your answer once you've
-                selected it. If you answer a question incorrectly, it will deduct 15 seconds off the of the timer. The quiz
-                is done once you've completed all the questions or run out of time. Good luck!</div>
-        </div>
-        
-        <button onclick="startQuiz()" type="button" class="btn btn-secondary bg-dark shadow">Start Quiz</button>
     </div>
-
 
     <!-- DISPLAY WHEN QUIZ IS OCCURRING -->
     <div id="during" class="hide">
-        <!-- countdown timer element -->
-        <p id="timer"></p>
-        <div>
-            <p id="currentQuestion"></p>
-            <div id="answers"></div>
-            <hr>
-            <p id="correct" class="hide">Correct</p>
-            <p id="incorrect" class="hide">Incorrect</p>
+        <div class="card text-center" style="width: 540px;">
+            <div class="card-header d-flex justify-content-between align-items-center bg-white">
+                <span>TIMED CODING QUIZ</span>
+                <button type="button" class="btn btn-primary btn-sm">
+                    Time Left <span class="badge bg-secondary" id="timer"></span>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" id="currentQuestion"></h5>
+                <div id="answers"></div>
+            </div>
+            <div class="card-footer text-muted bg-white">
+                <span id="correct" class="hide">Correct</span>
+                <span id="incorrect" class="hide">Incorrect</span>
+            </div>
         </div>
     </div>
 
     <!-- DISPLAY AT END -->
     <div id="ended" class="hide">
-        <p>Quiz Ended</p>
-
-        <!-- SHOW RESULTS -->
-        <p>Score: <span id="score"></span></p>
-
-        <!-- COLLECT INITIALS -->
-        <div class="mb-3">
-            <label for="initials" class="form-label">Enter Initials</label>
-            <input type="initials" class="form-control" id="initialsInput" aria-describedby="initialsHelp">
-            <div id="initialsHelp" class="form-text">Please input your initials.</div>
-            <button onclick="submitScore()" type="button" class="btn btn-secondary bg-dark shadow">Submit</button>
+        <div class="card text-center" style="width: 540px;">
+            <div class="card-header d-flex justify-content-center bg-white">
+                <span>Quiz Ended</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Score: <span id="score"></span></h5>
+                <!-- COLLECT INITIALS -->
+                <div class="mb-3 d-flex align-items-start justify-content-evenly">
+                    <label for="initials" class="form-label" class="mt-2">Enter Initials</label>
+                    <div>
+                        <input type="initials" class="form-control" id="initialsInput" aria-describedby="initialsHelp">
+                        <div id="initialsHelp" class="form-text">Please input your initials.</div>
+                    </div>  
+                    <button onclick="submitScore()" type="button" class="btn btn-secondary bg-dark shadow">Submit</button>
+                </div>
+            </div>
+            <div class="card-footer text-muted bg-white">
+                <button onclick="startQuiz()" type="button" class="btn btn-secondary bg-dark shadow">Start Quiz</button>
+            </div>
         </div>
-       
-        <button onclick="startQuiz()" type="button" class="btn btn-secondary bg-dark shadow">Start Quiz</button>
     </div>
 
     <!-- HIGH SCORES -->
     <div id="leaderboard" class="hide">
-        <p>Leader Board</p>
-        <div id="highScores"></div>
-        <button onclick="startQuiz()" type="button" class="btn btn-secondary bg-dark shadow">Start Quiz</button>
-        <button onclick="clearHighScores()" type="button" class="btn btn-secondary bg-dark shadow">Clear High Scores</button>
+        <div class="card text-center" style="width: 540px;">
+            <div class="card-header d-flex justify-content-center bg-white">
+                <span>Leader Board</span>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Initials</th>
+                        <th scope="col">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody id="highScores">
+                    </tbody>
+                </table>
+                <div id="clearScores" >
+                <button onclick="clearHighScores()" type="button" class="btn btn-sm btn-secondary bg-dark shadow">Clear High
+                    Scores</button>
+                </div>
+            </div>
+            <div class="card-footer text-muted bg-white">
+                <button onclick="startQuiz()" type="button" class="btn btn-secondary bg-dark shadow">Start Quiz</button>
+            </div>
+        </div>
     </div>
 
 

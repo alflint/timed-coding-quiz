@@ -170,7 +170,7 @@ function updateQuestion(index) {
 
     // Run through the list of answers for a given question and create a button
     for (var i = 0; i < questions[index].answers.length; i++) {
-        document.getElementById("answers").innerHTML += "<button onclick='answerClicked(" + index + ", " + i + ")'>" + questions[index].answers[i].text + "</button>"
+        document.getElementById("answers").innerHTML += "<button onclick='answerClicked(" + index + ", " + i + ")' class='btn btn-primary width-full my-1'>" + questions[index].answers[i].text + "</button>"
     }
 }
 
@@ -218,14 +218,16 @@ function submitScore() {
     }
     else {
         //UPDATE HTML
-        document.getElementById("highScores").innerHTML += "<p>"+initials + " " +currentScore+"</p>";
+        document.getElementById("highScores").innerHTML += "<tr><td>" + initials + "</td><td>" + currentScore+ "</td> </tr>"
         document.getElementById("ended").classList.add("hide")
         document.getElementById("leaderboard").classList.remove("hide")
+        document.getElementById("clearScores").classList.remove("hide")
     }
 }
 
 function clearHighScores() {
     document.getElementById("highScores").innerHTML = ""
+    document.getElementById("clearScores").classList.add("hide")
 }
 
 
